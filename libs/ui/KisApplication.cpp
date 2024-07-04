@@ -116,6 +116,8 @@
 #include <config-seexpr.h>
 #include <config-safe-asserts.h>
 
+#include "CustomApp.h"
+
 namespace {
 const QTime appStartTime(QTime::currentTime());
 }
@@ -710,6 +712,8 @@ bool KisApplication::start(const KisApplicationArguments &args)
     }
 
     verifyMetatypeRegistration();
+
+    CustomApp::instance()->loadInitialDocument();
 
     // not calling this before since the program will quit there.
     return true;
