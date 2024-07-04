@@ -53,10 +53,10 @@ Q_SIGNALS:
 private:
     KoPointerEvent convertEventToPointerEvent(QEvent *event, const QPointF &docPoint, bool *result);
     QPointF tabletToDocument(const QPointF &globalPos);
-    void forwardToTool(ActionState state, KisTool::ToolAction action, QEvent *event, const QPointF &docPoint);
 
 protected:
     QPointF widgetToDocument(const QPointF &widgetPoint) const override;
+    virtual void forwardToTool(ActionState state, KisTool::ToolAction action, QEvent *event, const QPointF &docPoint);
 
 private:
     bool m_isActionActivated;

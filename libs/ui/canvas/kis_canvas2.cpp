@@ -37,6 +37,7 @@
 
 #include <kis_lod_transform.h>
 #include "kis_tool_proxy.h"
+#include "custom_kis_tool_proxy.h"
 #include "kis_coordinates_converter.h"
 #include "kis_prescaled_projection.h"
 #include "kis_image.h"
@@ -148,7 +149,7 @@ public:
     KisSelectedShapesProxy selectedShapesProxy;
     bool currentCanvasIsOpenGL = true;
     int openGLFilterMode = 0;
-    KisToolProxy toolProxy;
+    CustomKisToolProxy toolProxy;
     KisPrescaledProjectionSP prescaledProjection;
     bool vastScrolling = false;
 

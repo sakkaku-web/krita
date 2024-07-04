@@ -19,6 +19,8 @@ if (APPLE)
 endif ()
 
 set(kritaui_LIB_SRCS
+    canvas/custom_kis_tool_proxy.cpp
+
     canvas/kis_canvas_widget_base.cpp
     canvas/kis_canvas2.cpp
     canvas/kis_canvas_updates_compressor.cpp

@@ -57,9 +57,6 @@ void CustomApp::loadInitialDocument() {
             for (i = 0; i < root->childCount(); i++) {
                 root->at(i)->setUserLocked(true);
             }
-            // Q_FOREACH(const KisNode node, ) {
-            // }
-            // qDebug() << "Locking existing nodes";
 
             KisMainWindow *mainWin = KisPart::instance()->currentMainwindow();
             mainWin->showDocument(doc);
