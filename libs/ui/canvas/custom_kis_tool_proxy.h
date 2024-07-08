@@ -16,6 +16,11 @@ public:
 
 protected:
     void forwardToTool(ActionState state, KisTool::ToolAction action, QEvent *event, const QPointF &docPoint) override;
+
+private:
+    KisNodeSP nodeAtPoint(const QPointF &docPoint) const;
+    void setCurrentNode(KisNodeSP node);
+    KisNodeSP currentNode() const;
 };
 
 #endif /* __CUSTOM_KIS_TOOL_PROXY_H */
