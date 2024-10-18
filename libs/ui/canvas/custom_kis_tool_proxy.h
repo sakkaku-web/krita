@@ -19,6 +19,7 @@ protected:
 
 private:
     KisNodeSP nodeAtPoint(const QPointF &docPoint) const;
+    void setActiveUINode(KisNodeSP node);
     void setCurrentNode(KisNodeSP node);
     KisNodeSP currentNode() const;
 };

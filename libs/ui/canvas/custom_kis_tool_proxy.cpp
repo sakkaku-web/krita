@@ -60,6 +60,13 @@ KisNodeSP CustomKisToolProxy::nodeAtPoint(const QPointF &docPoint) const
     return selectedNode;
 }
 
+void CustomKisToolProxy::setActiveUINode(KisNodeSP node)
+{
+    KisMainWindow *win = KisPart::instance()->currentMainwindow();
+    KisNodeManager *nodeManager = win->viewManager()->nodeManager();
+    nodeManager->slotUiActivatedNode(node);
+}
+
 void CustomKisToolProxy::setCurrentNode(KisNodeSP node)
 {
     KoCanvasResourceProvider *res = canvas()->resourceManager();
@@ -94,7 +101,7 @@ void CustomKisToolProxy::forwardToTool(ActionState state,
 
         // We need this to be updated earlier, so the user can smoothly continue drawing on new layer
         setCurrentNode(selectedNode);
-        // TODO: new layer is not actually selected
+        setActiveUINode(selectedNode);
 
     } else if (state == KisToolProxy::ActionState::END) {
         // Increase canvas to fit all content
